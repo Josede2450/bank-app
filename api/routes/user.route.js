@@ -5,4 +5,4 @@ const router = express.Router();
 
 router.get("/test", test); // we send the logic to the controller
 
-export default router;
+export default router; // If we export like as a default we can change the name in the index page
