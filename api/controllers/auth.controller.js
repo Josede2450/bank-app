@@ -4,6 +4,7 @@ import { errorHandler } from "../utils/error.js";
 import jwt from "jsonwebtoken"; // For validate teher user (Need to know how it works)
 import { json } from "express";
 
+// Controller For Sign Up
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body; // This is the data that we request to the database
 
@@ -35,6 +36,7 @@ export const signup = async (req, res, next) => {
   }
 };
 
+// Controller For Sign In
 export const signIn = async (req, res, next) => {
   const { email, password } = req.body;
 
