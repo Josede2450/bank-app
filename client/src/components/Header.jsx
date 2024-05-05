@@ -17,6 +17,7 @@ export default function Header() {
         </span>
       </Link>
 
+      {/* Change the order */}
       <div className="flex gap-2 md:order-2">
         <Button className="w-12 h-10 hidden sm:inline" color="gray" pill>
           <FaMoon />

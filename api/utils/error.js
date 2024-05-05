@@ -1,4 +1,4 @@
-//To handle the errors
+// Utils was created to handle the errors
 
 export const errorHandler = (statusCode, message) => {
   const error = new Error();
