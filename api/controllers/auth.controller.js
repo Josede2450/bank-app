@@ -98,7 +98,7 @@ export const google = async (req, res, next) => {
       const hashedPassword = bcryptjs.hashSync(generatedPassword, 10); // Hash the random password
 
       const newUser = new User({
-        // Using oru squema to pass the data to teh data base
+        // Using our squema to pass the data to teh data base
         username:
           name.toLowerCase().split(" ").join("") +
           Math.random().toString(9).slice(-4),

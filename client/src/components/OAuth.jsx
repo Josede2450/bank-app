@@ -24,8 +24,8 @@ export default function OAuth() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: resultsFromGoogle.user.displayName, // Name
-          email: resultsFromGoogle.user.displayEmail,
+          name: resultsFromGoogle.user.displayName,
+          email: resultsFromGoogle.user.email,
         }),
       });
 
