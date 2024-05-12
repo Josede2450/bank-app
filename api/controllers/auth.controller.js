@@ -37,7 +37,7 @@ export const signup = async (req, res, next) => {
 };
 
 // Controller For Sign In
-export const signIn = async (req, res, next) => {
+export const signin = async (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !password || email === "" || password === "") {
@@ -58,7 +58,7 @@ export const signIn = async (req, res, next) => {
 
     const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET, {
       // Auth
-      expiresIn: "30m", // Will log out in 30 minutes
+      expiresIn: "24h", // Will log out in 30 minutes
     });
 
     const { password: pass, ...rest } = validUser._doc; // Separte the password from the rest
@@ -66,7 +66,7 @@ export const signIn = async (req, res, next) => {
     res
       .status(200)
       .cookie("access_token", token, { httpOnly: true })
-      .json(rest); //Save it to the cookien on the browser
+      .json(rest); //Save it to the cookie on the browser
   } catch (error) {
     next(error);
   }
